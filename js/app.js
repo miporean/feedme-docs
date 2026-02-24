@@ -1,4 +1,4 @@
-// FeedMe Docs — Main Application Logic
+// FeedMe Guideline — Main Application Logic
 (function () {
   'use strict';
 
@@ -50,6 +50,13 @@
     return map[catId] || 'tag-menu';
   }
 
+  // Portal subcategory IDs
+  const PORTAL_CATS = ['menu-setup', 'connect-setup', 'restaurant-operation', 'hrm'];
+
+  function isPortalCategory(catId) {
+    return PORTAL_CATS.includes(catId);
+  }
+
   function getCatLabel(catId) {
     const map = {
       'menu-setup': 'Menu',
@@ -89,6 +96,44 @@
   // ===== RENDER HOME PAGE =====
   function renderHome() {
     updateNav('home');
+
+    // Build top-level sections for home
+    const portalCats = SITE_DATA.categories.filter(c => c.section === 'portal');
+    const troubleshootingCat = findCategory('troubleshooting');
+    const portalArticleCount = portalCats.reduce((sum, c) => sum + c.articles.length, 0);
+    const tsArticleCount = troubleshootingCat ? troubleshootingCat.articles.length : 0;
+
+    const topSections = [
+      {
+        id: 'portal',
+        name: 'FeedMe Portal',
+        icon: '🖥️',
+        color: '#FF6B35',
+        bgColor: '#FFF0EB',
+        description: 'Menu setup, promotions, operations, and HR management guides.',
+        count: portalArticleCount
+      },
+      {
+        id: 'pos',
+        name: 'FeedMe POS',
+        icon: '📱',
+        color: '#4A6CF7',
+        bgColor: '#EEF2FF',
+        description: 'POS system setup and usage tutorials.',
+        count: 0
+      },
+      {
+        id: 'troubleshooting',
+        name: 'Troubleshooting',
+        icon: '🔧',
+        color: '#F59E0B',
+        bgColor: '#FFF8E1',
+        description: 'Common issues and solutions for printers, connectivity, and more.',
+        count: tsArticleCount
+      }
+    ];
+
+    // Popular articles from all categories
     const popularArticles = [];
     SITE_DATA.categories.forEach(cat => {
       cat.articles.slice(0, 2).forEach(article => {
@@ -113,14 +158,14 @@
       <!-- Categories -->
       <section class="categories-section">
         <div class="categories-grid">
-          ${SITE_DATA.categories.map((cat, i) => `
-            <a class="category-card animate-in" data-category="${cat.id}" style="animation-delay: ${i * 0.1}s">
-              <div class="card-icon" style="background: ${cat.bgColor}; color: ${cat.color};">${cat.icon}</div>
-              <h3>${cat.name}</h3>
-              <p>${cat.description}</p>
+          ${topSections.map((sec, i) => `
+            <a class="category-card animate-in" data-category="${sec.id}" style="animation-delay: ${i * 0.1}s">
+              <div class="card-icon" style="background: ${sec.bgColor}; color: ${sec.color};">${sec.icon}</div>
+              <h3>${sec.name}</h3>
+              <p>${sec.description}</p>
               <div class="article-count">
                 ${icons.doc}
-                <span>${cat.articles.length}</span> articles
+                <span>${sec.count}</span> ${sec.count === 1 ? 'article' : 'articles'}
               </div>
             </a>
           `).join('')}
@@ -202,19 +247,111 @@
     window.scrollTo(0, 0);
   }
 
-  // ===== RENDER CATEGORY PAGE =====
-  function renderCategory(catId) {
-    const cat = findCategory(catId);
-    if (!cat) { renderHome(); return; }
-
-    updateNav(catId);
+  // ===== RENDER PORTAL LANDING PAGE =====
+  function renderPortal() {
+    updateNav('portal');
+    const portalCats = SITE_DATA.categories.filter(c => c.section === 'portal');
 
     app.innerHTML = `
       <section class="category-hero">
         <div class="breadcrumb">
           <a href="index.html" data-page="home">Home</a>
           <span>›</span>
-          ${cat.name}
+          Portal
+        </div>
+        <div class="category-hero-content">
+          <div class="category-hero-icon" style="background: #FFF0EB; color: #FF6B35; font-size: 32px;">
+            🖥️
+          </div>
+          <div>
+            <h1>FeedMe Portal</h1>
+            <p class="subtitle">Setup guides for menu, promotions, operations, and HR management in FeedMe Portal.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="category-articles">
+        <div class="ts-grid">
+          ${portalCats.map((cat, i) => `
+            <a class="ts-card animate-in" data-category="${cat.id}" style="animation-delay: ${i * 0.08}s; --card-accent: ${cat.color};">
+              <div class="ts-card-header">
+                <div class="ts-card-icon" style="background: ${cat.bgColor}; color: ${cat.color};">
+                  ${cat.icon}
+                </div>
+                <span class="ts-card-arrow">${icons.arrow}</span>
+              </div>
+              <h3 class="ts-card-title">${cat.name}</h3>
+              <p class="ts-card-desc">${cat.description}</p>
+              <div class="ts-card-tags">
+                <span class="ts-tag" style="background: ${cat.color}12; color: ${cat.color}; border: 1px solid ${cat.color}25;">${cat.articles.length} articles</span>
+              </div>
+            </a>
+          `).join('')}
+        </div>
+      </section>
+    `;
+
+    setupClickHandlers();
+    window.scrollTo(0, 0);
+  }
+
+  // ===== RENDER POS LANDING PAGE =====
+  function renderPOS() {
+    updateNav('pos');
+
+    app.innerHTML = `
+      <section class="category-hero">
+        <div class="breadcrumb">
+          <a href="index.html" data-page="home">Home</a>
+          <span>›</span>
+          POS
+        </div>
+        <div class="category-hero-content">
+          <div class="category-hero-icon" style="background: #EEF2FF; color: #4A6CF7; font-size: 32px;">
+            📱
+          </div>
+          <div>
+            <h1>FeedMe POS</h1>
+            <p class="subtitle">Setup guides and tutorials for FeedMe POS system.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="category-articles">
+        <div class="empty-state" style="text-align: center; padding: 60px 20px;">
+          <div style="font-size: 48px; margin-bottom: 16px;">🚧</div>
+          <h3 style="color: var(--text); margin-bottom: 8px;">Coming Soon</h3>
+          <p style="color: var(--text-muted);">POS guides are being prepared. Check back soon!</p>
+        </div>
+      </section>
+    `;
+
+    setupClickHandlers();
+    window.scrollTo(0, 0);
+  }
+
+  // ===== RENDER CATEGORY PAGE =====
+  function renderCategory(catId) {
+    // Handle virtual categories
+    if (catId === 'portal') { return renderPortal(); }
+    if (catId === 'pos') { return renderPOS(); }
+
+    const cat = findCategory(catId);
+    if (!cat) { renderHome(); return; }
+
+    updateNav(isPortalCategory(catId) ? 'portal' : catId);
+
+    // Build breadcrumb with Portal parent if applicable
+    const breadcrumbParts = [`<a href="index.html" data-page="home">Home</a><span>›</span>`];
+    if (isPortalCategory(catId)) {
+      breadcrumbParts.push(`<a href="index.html?category=portal" data-category="portal">Portal</a><span>›</span>`);
+    }
+    breadcrumbParts.push(cat.name);
+
+    app.innerHTML = `
+      <section class="category-hero">
+        <div class="breadcrumb">
+          ${breadcrumbParts.join('')}
         </div>
         <div class="category-hero-content">
           <div class="category-hero-icon" style="background: ${cat.bgColor}; color: ${cat.color}; font-size: 32px;">
@@ -264,7 +401,7 @@
     if (!result) { renderHome(); return; }
 
     const { article, category } = result;
-    updateNav(category.id);
+    updateNav(isPortalCategory(category.id) ? 'portal' : category.id);
 
     // Build view toggle if scribeEmbed is available
     let viewToggle = '';
@@ -311,6 +448,7 @@
         <div class="breadcrumb">
           <a href="index.html" data-page="home">Home</a>
           <span>›</span>
+          ${isPortalCategory(category.id) ? `<a href="index.html?category=portal" data-category="portal">Portal</a><span>›</span>` : ''}
           <a href="index.html?category=${category.id}" data-category="${category.id}">${category.name}</a>
           <span>›</span>
           ${article.title}
@@ -463,11 +601,13 @@
 
   // ===== NAV STATE =====
   function updateNav(activeId) {
+    // Map portal subcategories to 'portal' for nav highlighting
+    const navId = isPortalCategory(activeId) ? 'portal' : activeId;
     nav.querySelectorAll('a').forEach(a => {
       a.classList.remove('active');
-      if (activeId === 'home' && a.getAttribute('data-page') === 'home') {
+      if (navId === 'home' && a.getAttribute('data-page') === 'home') {
         a.classList.add('active');
-      } else if (a.getAttribute('data-cat') === activeId) {
+      } else if (a.getAttribute('data-cat') === navId) {
         a.classList.add('active');
       }
     });

@@ -93,17 +93,8 @@ img {
   color: var(--dark);
 }
 
-.logo-icon {
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 18px;
-  font-weight: 800;
+.logo-icon-svg {
+  flex-shrink: 0;
 }
 
 .nav {
@@ -147,7 +138,7 @@ img {
   padding: 80px 40px;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero::before {
@@ -891,12 +882,7 @@ img {
   color: #fff;
 }
 
-.footer-logo .logo-icon {
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  border-radius: 8px;
-}
+
 
 .footer-links {
   display: flex;

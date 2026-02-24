@@ -1,12 +1,13 @@
-// FeedMe Knowledge Base - Content Data
+// FeedMe Guideline - Content Data
 const SITE_DATA = {
-  siteName: "FeedMe Docs",
-  siteTagline: "Setup guides, tutorials, and troubleshooting for FeedMe Portal",
+  siteName: "FeedMe Guideline",
+  siteTagline: "Setup guides, tutorials, and troubleshooting for FeedMe Portal & POS",
   portalUrl: "https://portal.feedme.com",
 
   categories: [
     {
       id: "menu-setup",
+      section: "portal",
       name: "Menu Setup",
       icon: "🍽️",
       color: "#FF6B35",
@@ -229,6 +230,7 @@ const SITE_DATA = {
     },
     {
       id: "connect-setup",
+      section: "portal",
       name: "Connect Setup",
       icon: "🔗",
       color: "#4A6CF7",
@@ -380,6 +382,7 @@ const SITE_DATA = {
     },
     {
       id: "restaurant-operation",
+      section: "portal",
       name: "Restaurant Operation",
       icon: "🏪",
       color: "#22C55E",
@@ -424,6 +427,7 @@ const SITE_DATA = {
     },
     {
       id: "hrm",
+      section: "portal",
       name: "HRM",
       icon: "👥",
       color: "#8B5CF6",
@@ -523,6 +527,7 @@ const SITE_DATA = {
     },
     {
       id: "troubleshooting",
+      section: "troubleshooting",
       name: "Troubleshooting",
       icon: "🔧",
       color: "#F59E0B",

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FeedMe Docs — Setup Guides & Troubleshooting</title>
+    <title>FeedMe Guideline — Setup Guides & Troubleshooting</title>
     <meta name="description"
-        content="FeedMe Portal setup guides, tutorials, and troubleshooting. Learn how to configure your restaurant menu, promotions, operations, and more.">
+        content="FeedMe Portal and POS setup guides, tutorials, and troubleshooting. Learn how to configure your restaurant menu, promotions, operations, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,15 +19,25 @@
     <!-- Header -->
     <header class="header" id="header">
         <a href="index.html" class="logo">
-            <div class="logo-icon">🍴</div>
-            FeedMe Docs
+            <svg class="logo-icon-svg" viewBox="0 0 40 40" width="36" height="36">
+                <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FF8C42"/>
+                        <stop offset="100%" style="stop-color:#FF6B35"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="20" cy="20" r="18" fill="url(#logoGrad)"/>
+                <path d="M14 10 L14 22 Q14 28 20 30 Q26 28 26 22 L26 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <line x1="17" y1="10" x2="17" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <line x1="20" y1="10" x2="20" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <line x1="23" y1="10" x2="23" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            FeedMe Guideline
         </a>
         <nav class="nav" id="nav">
             <a href="index.html" class="active" data-page="home">Home</a>
-            <a href="index.html?category=menu-setup" data-cat="menu-setup">Menu Setup</a>
-            <a href="index.html?category=connect-setup" data-cat="connect-setup">Connect</a>
-            <a href="index.html?category=restaurant-operation" data-cat="restaurant-operation">Operations</a>
-            <a href="index.html?category=hrm" data-cat="hrm">HRM</a>
+            <a href="index.html?category=portal" data-cat="portal">Portal</a>
+            <a href="index.html?category=pos" data-cat="pos">POS</a>
             <a href="index.html?category=troubleshooting" data-cat="troubleshooting">Troubleshooting</a>
         </nav>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
@@ -42,8 +52,20 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <div class="logo-icon">🍴</div>
-                FeedMe Docs
+                <svg class="logo-icon-svg" viewBox="0 0 40 40" width="28" height="28">
+                    <defs>
+                        <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF8C42"/>
+                            <stop offset="100%" style="stop-color:#FF6B35"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="20" cy="20" r="18" fill="url(#footerLogoGrad)"/>
+                    <path d="M14 10 L14 22 Q14 28 20 30 Q26 28 26 22 L26 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="17" y1="10" x2="17" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="20" y1="10" x2="20" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="23" y1="10" x2="23" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                FeedMe Guideline
             </div>
             <div class="footer-links">
                 <a href="https://portal.feedme.com" target="_blank" rel="noopener">FeedMe Portal</a>
