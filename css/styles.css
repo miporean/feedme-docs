@@ -139,6 +139,7 @@ img {
   text-align: center;
   position: relative;
   overflow: visible;
+  z-index: 10;
 }
 
 .hero::before {
@@ -185,7 +186,7 @@ img {
   max-width: 580px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 100;
 }
 
 .search-box {
@@ -287,7 +288,7 @@ img {
   margin: -48px auto 60px;
   padding: 0 40px;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 
 .categories-grid {
