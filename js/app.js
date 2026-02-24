@@ -1,4 +1,4 @@
-// FeedMe Guideline — Main Application Logic
+// MIPOS X FeedMe Guideline — Main Application Logic
 (function () {
   'use strict';
 
