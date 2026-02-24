@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedMe Docs — Setup Guides & Troubleshooting</title>
+    <meta name="description"
+        content="FeedMe Portal setup guides, tutorials, and troubleshooting. Learn how to configure your restaurant menu, promotions, operations, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍴</text></svg>">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🍴</div>
+            FeedMe Docs
+        </a>
+        <nav class="nav" id="nav">
+            <a href="index.html" class="active" data-page="home">Home</a>
+            <a href="index.html?category=menu-setup" data-cat="menu-setup">Menu Setup</a>
+            <a href="index.html?category=connect-setup" data-cat="connect-setup">Connect</a>
+            <a href="index.html?category=restaurant-operation" data-cat="restaurant-operation">Operations</a>
+            <a href="index.html?category=hrm" data-cat="hrm">HRM</a>
+            <a href="index.html?category=troubleshooting" data-cat="troubleshooting">Troubleshooting</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="app">
+        <!-- Content is rendered dynamically by app.js -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon">🍴</div>
+                FeedMe Docs
+            </div>
+            <div class="footer-links">
+                <a href="https://portal.feedme.com" target="_blank" rel="noopener">FeedMe Portal</a>
+                <a href="mailto:support@feedme.com">Contact Support</a>
+            </div>
+            <div class="footer-copy">© 2026 FeedMe · Built by MiPOS Team</div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

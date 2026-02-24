@@ -1,0 +1,864 @@
+// FeedMe Knowledge Base - Content Data
+const SITE_DATA = {
+  siteName: "FeedMe Docs",
+  siteTagline: "Setup guides, tutorials, and troubleshooting for FeedMe Portal",
+  portalUrl: "https://portal.feedme.com",
+
+  categories: [
+    {
+      id: "menu-setup",
+      name: "Menu Setup",
+      icon: "🍽️",
+      color: "#FF6B35",
+      bgColor: "#FFF0EB",
+      description: "Create products, variants, add-on options, menu schedulers and catalogs for your restaurant.",
+      articles: [
+        {
+          id: "create-new-product",
+          title: "How to Create New Product",
+          description: "Learn how to add a new product to your restaurant menu in the FeedMe Portal.",
+          tags: ["menu", "product", "create"],
+          scribeEmbed: "https://scribehow.com/embed/How_to_Create_New_Product__wIqj9T_8QZyDJGBhLXF35g",
+          content: `
+            <h2>Overview</h2>
+            <p>This guide walks you through creating a new product in the FeedMe Portal. Products are the core items displayed on your restaurant menu.</p>
+            <h2>Steps</h2>
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Navigate to Menu Management</h4>
+                <p>In the FeedMe Portal, go to the left sidebar and click on <strong>"Menu"</strong> to expand the menu options.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Click "Create Product"</h4>
+                <p>Click the <strong>"+ Create Product"</strong> button in the top-right corner of the product list page.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Fill in Product Details</h4>
+                <p>Enter the product name, description, price, and upload a product image. Set the category and any applicable tags.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>Save and Publish</h4>
+                <p>Review your product details and click <strong>"Save"</strong>. Toggle the publish switch to make it visible on your menu.</p>
+              </div>
+            </div>
+          `
+        },
+        {
+          id: "create-variant",
+          title: "How to Create Variant",
+          description: "Set up product variants like sizes, flavors, or other options for your menu items.",
+          tags: ["menu", "variant", "product"],
+          scribeEmbed: "https://scribehow.com/embed/How_to_Variant__9Pn01DdPTl2MyUK1GIl8HQ",
+          content: `
+            <h2>Overview</h2>
+            <p>Variants allow you to offer different options for a product, such as sizes (Small, Medium, Large) or flavors.</p>
+            <h2>Steps</h2>
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Go to the Product</h4>
+                <p>Navigate to <strong>Menu → Products</strong> and click on the product you want to add variants to.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Open Variant Settings</h4>
+                <p>Scroll down to the <strong>"Variants"</strong> section and click <strong>"+ Add Variant Group"</strong>.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Configure Variant Options</h4>
+                <p>Enter the variant group name (e.g., "Size"), then add each option with its name and price adjustment.</p>
+              </div>
+            </div>
+          `
+        },
+        {
+          id: "edit-product",
+          title: "How to Edit Product",
+          description: "Update product details, pricing, images, and availability settings.",
+          tags: ["menu", "product", "edit"],
+          scribeEmbed: "https://scribehow.com/embed/How_to_Edit_Product__GmJapbynTqmO5IwGf56QwQ",
+          content: `
+            <h2>Overview</h2>
+            <p>This guide shows you how to edit existing products in your FeedMe menu.</p>
+            <h2>Steps</h2>
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Find the Product</h4>
+                <p>Go to <strong>Menu → Products</strong> and locate the product you want to edit. You can use the search bar to find it quickly.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Edit Details</h4>
+                <p>Click on the product to open its details. Modify the name, description, price, image, or any other fields as needed.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Save Changes</h4>
+                <p>Click <strong>"Save"</strong> to apply your changes. The updates will be reflected immediately on your menu.</p>
+              </div>
+            </div>
+          `
+        },
+        {
+          id: "create-addon-options",
+          title: "How to Create Add-on Options",
+          description: "Set up add-on options that customers can select when ordering items.",
+          tags: ["menu", "addon", "options"],
+          scribeEmbed: "https://scribehow.com/embed/How_to_Create_Add-on_Options__fSm52nMiQw2FKAggRlJ9jQ",
+          content: `
+            <h2>Overview</h2>
+            <p>Add-on options allow customers to customize their orders with extras like toppings, sides, or special requests.</p>
+            <h2>Steps</h2>
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Navigate to Add-on Settings</h4>
+                <p>Go to <strong>Menu → Add-on Options</strong> in the FeedMe Portal sidebar.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Create Add-on Group</h4>
+                <p>Click <strong>"+ Create Add-on Group"</strong>. Enter a group name (e.g., "Extra Toppings") and set selection rules (min/max selections).</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Add Items to Group</h4>
+                <p>Add individual add-on items with their names and prices. Toggle availability as needed.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>Link to Products</h4>
+                <p>Assign the add-on group to specific products so customers can see these options when ordering.</p>
+              </div>
+            </div>
+          `
+        },
+        {
+          id: "create-menu-scheduler",
+          title: "How to Create Menu Scheduler",
+          description: "Schedule when specific menu items or categories are available for ordering.",
+          tags: ["menu", "scheduler", "availability"],
+          scribeEmbed: "https://scribehow.com/embed/How_to_Create_Menu_Scheduler__GQqDdRD8Scyfevw_pnGkqQ",
+          content: `
+            <h2>Overview</h2>
+            <p>The Menu Scheduler lets you control when certain items appear on your menu — perfect for breakfast, lunch, dinner, or special promotions.</p>
+            <h2>Steps</h2>
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Go to Menu Scheduler</h4>
+                <p>Navigate to <strong>Menu → Scheduler</strong> in the FeedMe Portal.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Create New Schedule</h4>
+                <p>Click <strong>"+ New Schedule"</strong>. Set the schedule name, days of the week, and time range.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Assign Menu Items</h4>
+                <p>Select which products or categories should follow this schedule. Items will only be visible during the scheduled time.</p>
+              </div>
+            </div>
+          `
+        },
+        {
+          id: "create-catalog",
+          title: "How to Create Catalog",
+          description: "Organize your menu items into catalogs for better structure and presentation.",
+          tags: ["menu", "catalog", "organize"],
+          scribeEmbed: "https://scribehow.com/embed/How_to_Create_Catalog__fi13bbz8SluIDFbXubHJyQ",
+          content: `
+            <h2>Overview</h2>
+            <p>Catalogs help you organize your menu into logical groups, making it easier for customers to browse and order.</p>
+            <h2>Steps</h2>
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Navigate to Catalog</h4>
+                <p>Go to <strong>Menu → Catalog</strong> in the portal sidebar.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Create New Catalog</h4>
+                <p>Click <strong>"+ Create Catalog"</strong>. Enter a name, description, and optionally upload a cover image.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Add Products</h4>
+                <p>Drag and drop or select products to include in this catalog. Arrange them in your preferred display order.</p>
+              </div>
+            </div>
+          `
+        }
+      ]
+    },
+    {
+      id: "connect-setup",
+      name: "Connect Setup",
+      icon: "🔗",
+      color: "#4A6CF7",
+      bgColor: "#EBF0FF",
+      description: "Promotions, vouchers, broadcasts, memberships, loyalty programs and reward campaigns.",
+      articles: [
+        {
+          id: "promotion-item-discount",
+          title: "Create Promotion Campaign (Item Discount)",
+          description: "Set up item-level discount promotions to attract more customers.",
+          tags: ["connect", "promotion", "discount", "item"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Promotion_Campaign_Item_Discount__aUiVym5MRSq3mFuVHGChjQ",
+          content: `<h2>Overview</h2><p>Item discount promotions allow you to offer discounts on specific menu items. This guide shows you how to create and configure one in the FeedMe Portal.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Go to Connect → Promotions</h4><p>Navigate to the <strong>Connect</strong> section and click on <strong>Promotions</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create New Promotion</h4><p>Click <strong>"+ Create Promotion"</strong> and select <strong>"Item Discount"</strong> as the type.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Configure Discount</h4><p>Set the discount amount (percentage or fixed), select applicable items, and define the promotion period.</p></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-content"><h4>Activate</h4><p>Review and click <strong>"Publish"</strong> to make the promotion live.</p></div></div>`
+        },
+        {
+          id: "promotion-bill-discount",
+          title: "Create Promotion Campaign (Bill Discount)",
+          description: "Create bill-level discount promotions for entire orders.",
+          tags: ["connect", "promotion", "discount", "bill"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Promotion_Campaign_Bill_Discount__vbhxHdq2R7mAcumN6nRcDA",
+          content: `<h2>Overview</h2><p>Bill discount promotions apply discounts to the entire order total, encouraging higher spending.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Go to Connect → Promotions</h4><p>Navigate to <strong>Connect → Promotions</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create Bill Discount</h4><p>Click <strong>"+ Create Promotion"</strong> and select <strong>"Bill Discount"</strong> type.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Set Conditions</h4><p>Define minimum order amount, discount value, and the campaign duration.</p></div></div>`
+        },
+        {
+          id: "voucher-campaign-bill",
+          title: "Create Voucher Campaign (Bill Discount)",
+          description: "Generate voucher codes that provide bill-level discounts.",
+          tags: ["connect", "voucher", "discount", "bill"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Voucher_Campaign_Bill_Discount__ieHwgXdOTRSQGLRhIFQpIA",
+          content: `<h2>Overview</h2><p>Voucher campaigns let you generate redeemable codes for bill discounts.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Navigate to Vouchers</h4><p>Go to <strong>Connect → Vouchers</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create Voucher Campaign</h4><p>Click <strong>"+ Create Voucher"</strong> and select <strong>"Bill Discount"</strong>.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Configure and Generate</h4><p>Set the discount value, usage limits, validity period, and generate voucher codes.</p></div></div>`
+        },
+        {
+          id: "voucher-code-campaign",
+          title: "Create Voucher Code Campaign",
+          description: "Create custom voucher codes for marketing campaigns and customer rewards.",
+          tags: ["connect", "voucher", "code", "campaign"],
+          scribeEmbed: "https://scribehow.com/embed/Create_a_Voucher_Code__jDYZkUUwSmiJVhqb3RR8wA",
+          content: `<h2>Overview</h2><p>Custom voucher codes can be used for targeted marketing campaigns.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Go to Voucher Codes</h4><p>Navigate to <strong>Connect → Voucher Codes</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create Campaign</h4><p>Click <strong>"+ Create Campaign"</strong>, enter the campaign name and set a custom voucher code prefix.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Set Rules and Publish</h4><p>Define redemption rules, expiry date, and usage limits. Click <strong>"Publish"</strong> to activate.</p></div></div>`
+        },
+        {
+          id: "broadcast-campaign",
+          title: "Create Broadcast Campaign",
+          description: "Send targeted broadcast messages to your customer base.",
+          tags: ["connect", "broadcast", "marketing", "message"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Broadcast_Campaign__0H2HgNLERSaacY_6NHyWDQ",
+          content: `<h2>Overview</h2><p>Broadcast campaigns allow you to send push notifications or messages to your customers.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Navigate to Broadcasts</h4><p>Go to <strong>Connect → Broadcast</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create New Broadcast</h4><p>Click <strong>"+ Create Broadcast"</strong>. Choose your target audience and message type.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Compose and Send</h4><p>Write your broadcast message, attach any images or promotions, and schedule or send immediately.</p></div></div>`
+        },
+        {
+          id: "membership-tiers",
+          title: "Create Membership Tiers and Experience",
+          description: "Set up membership levels with tiered benefits and rewards for loyal customers.",
+          tags: ["connect", "membership", "tiers", "loyalty"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Membership_Tiers_and_Experience__DdW_kmhzR4e86bm3csIGyA",
+          content: `<h2>Overview</h2><p>Membership tiers create a loyalty hierarchy for your customers with escalating benefits.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Go to Membership</h4><p>Navigate to <strong>Connect → Membership</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create Tiers</h4><p>Define tier names (e.g., Silver, Gold, Platinum), point thresholds, and benefits for each level.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Configure Experience</h4><p>Set up the customer experience — how points are earned, what rewards are unlocked at each tier.</p></div></div>`
+        },
+        {
+          id: "create-title",
+          title: "Create Title",
+          description: "Create customer titles and badges for your loyalty program.",
+          tags: ["connect", "title", "badge", "loyalty"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Title__IRlggo-tTTGk0ZcHT930yA",
+          content: `<h2>Overview</h2><p>Titles are special badges or labels assigned to customers based on their activity or membership level.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Navigate to Titles</h4><p>Go to <strong>Connect → Titles</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create New Title</h4><p>Click <strong>"+ Create Title"</strong>, set the title name, icon, and criteria for earning it.</p></div></div>`
+        },
+        {
+          id: "point-program",
+          title: "Create Point Program",
+          description: "Set up a points-based loyalty program for customer retention.",
+          tags: ["connect", "points", "loyalty", "rewards"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Point_Campaign__hlvcCc0fTDaNjU1szlXBJQ",
+          content: `<h2>Overview</h2><p>A point program rewards customers with points for every purchase, which can be redeemed for discounts or free items.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Go to Point Program</h4><p>Navigate to <strong>Connect → Point Program</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Configure Earning Rules</h4><p>Set how many points customers earn per RM spent (e.g., RM1 = 1 point).</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Set Redemption Options</h4><p>Define what rewards can be redeemed with points and the point values required.</p></div></div>`
+        },
+        {
+          id: "cashback-program",
+          title: "Create Cashback Program",
+          description: "Offer cashback rewards to encourage repeat purchases.",
+          tags: ["connect", "cashback", "rewards"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Cashback_Program__m9X_b_eXTSCqWC_JVS5ekg",
+          content: `<h2>Overview</h2><p>Cashback programs return a percentage of the purchase amount as store credit.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Navigate to Cashback</h4><p>Go to <strong>Connect → Cashback</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create Cashback Program</h4><p>Set the cashback percentage, minimum spend requirement, and expiry period for the cashback credit.</p></div></div>`
+        },
+        {
+          id: "spin-win-game",
+          title: "Create a Spin and Win Game Program",
+          description: "Create an interactive spin-the-wheel game for customer engagement.",
+          tags: ["connect", "game", "spin", "engagement"],
+          scribeEmbed: "https://scribehow.com/embed/Create_a_Spin_and_Win_Game_Program__nVX091WFS8GWVSZ8F8ixGw",
+          content: `<h2>Overview</h2><p>Spin and Win games are gamified promotions that let customers spin a wheel for prizes.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Go to Games</h4><p>Navigate to <strong>Connect → Games → Spin and Win</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Configure the Wheel</h4><p>Add prize segments, set win probabilities, and customize the wheel appearance.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Set Participation Rules</h4><p>Define how customers can earn spins (e.g., per purchase, membership action).</p></div></div>`
+        },
+        {
+          id: "mission-program",
+          title: "Create Mission Program",
+          description: "Set up mission-based challenges for customers to complete and earn rewards.",
+          tags: ["connect", "mission", "challenge", "engagement"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Mission_Program__4twUqx_bS9-iRa8M_7KZ5w",
+          content: `<h2>Overview</h2><p>Mission programs challenge customers to complete specific actions in exchange for rewards.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Navigate to Missions</h4><p>Go to <strong>Connect → Missions</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create Mission</h4><p>Define the mission name, required actions (e.g., "Order 5 times"), and the reward for completion.</p></div></div>`
+        },
+        {
+          id: "points-redeem-reward",
+          title: "Create Points Redeem Reward",
+          description: "Set up rewards that customers can redeem using their loyalty points.",
+          tags: ["connect", "points", "redeem", "reward"],
+          scribeEmbed: "https://scribehow.com/embed/Create_Points_Redeem_Reward__4oyDIS7fQGGDSXXtLsqfwQ",
+          content: `<h2>Overview</h2><p>Points Redeem Rewards are items or discounts customers can exchange their accumulated points for.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Go to Redeem Rewards</h4><p>Navigate to <strong>Connect → Point Program → Redeem Rewards</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create Reward</h4><p>Click <strong>"+ Create Reward"</strong>. Set the reward type (item, discount, or voucher), points required, and availability period.</p></div></div>`
+        }
+      ]
+    },
+    {
+      id: "restaurant-operation",
+      name: "Restaurant Operation",
+      icon: "🏪",
+      color: "#22C55E",
+      bgColor: "#EBFFF4",
+      description: "Day-to-day restaurant operations, order management, and workflow guides.",
+      articles: [
+        {
+          id: "service-charge-setup",
+          title: "Service Charge Setup",
+          description: "Configure service charge rates and rules for your restaurant.",
+          tags: ["operation", "service-charge", "setup"],
+          scribeEmbed: "https://scribehow.com/embed/Service_Charge_Setup__KzPBr2GwRhGhLFu5-TrlBQ",
+          content: `<h2>Overview</h2><p>This guide shows you how to configure service charge settings for your restaurant in the FeedMe Portal.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Navigate to Settings</h4><p>Go to <strong>Settings → Service Charge</strong> in the FeedMe Portal.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Configure Rate</h4><p>Set the service charge percentage and configure when it should be applied.</p></div></div>`
+        },
+        {
+          id: "table-setup",
+          title: "Table Setup",
+          description: "Configure your restaurant's table layout and QR ordering setup.",
+          tags: ["operation", "table", "setup", "qr"],
+          scribeEmbed: "https://scribehow.com/embed/Tables_Setup__0Z5Z1aYvQqKGNjFJV0eMtw",
+          content: `<h2>Overview</h2><p>Set up your restaurant's table layout for dine-in ordering and QR code generation.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Navigate to Table Setup</h4><p>Go to <strong>Operations → Table Setup</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Add Tables</h4><p>Click <strong>"+ Add Table"</strong> to create tables. Set table numbers, seating capacity, and section assignments.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Generate QR Codes</h4><p>Click <strong>"Generate QR"</strong> for each table to create unique QR codes for customer ordering.</p></div></div>`
+        },
+        {
+          id: "reason-template-setup",
+          title: "Reason Template Setup",
+          description: "Create predefined reason templates for order cancellations, refunds, and voids.",
+          tags: ["operation", "reason", "template", "setup"],
+          scribeEmbed: "https://scribehow.com/embed/Reason_Template_Setup__0uN3Lih2THeVtEyVGv4m5w",
+          content: `<h2>Overview</h2><p>Reason templates help standardize the reasons staff provide when cancelling, refunding, or voiding orders.</p>
+            <h2>Steps</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Go to Reason Templates</h4><p>Navigate to <strong>Settings → Reason Templates</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Create Template</h4><p>Click <strong>"+ Add Template"</strong> and enter predefined reasons for each operation type.</p></div></div>`
+        }
+      ]
+    },
+    {
+      id: "hrm",
+      name: "HRM",
+      icon: "👥",
+      color: "#8B5CF6",
+      bgColor: "#F5EBFF",
+      description: "Employee role setup, permissions management, and team configurations.",
+      articles: [
+        {
+          id: "employee-role-setup",
+          title: "Employee Role Setup",
+          description: "Create and configure employee roles with the right permissions for your restaurant team.",
+          tags: ["hrm", "employee", "role", "permissions"],
+          steps: 9,
+          duration: "19 seconds",
+          scribeEmbed: "https://scribehow.com/embed/Employee_Role_Setup__I3O8r_hfSu2bdihH0ACBgg",
+          content: `
+            <h2>Overview</h2>
+            <p>This guide walks you through creating and configuring employee roles in the FeedMe Portal. Roles define what each team member can access and do within the system.</p>
+            <h2>Steps</h2>
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Navigate to HRM Settings</h4>
+                <p>In the FeedMe Portal, go to the left sidebar and click on <strong>"HRM"</strong> to expand the HRM menu options.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Click on "Role Management"</h4>
+                <p>Select <strong>"Role Management"</strong> from the HRM submenu to access the role configuration page.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Create New Role</h4>
+                <p>Click the <strong>"+ New Role"</strong> button in the top-right corner to start creating a new employee role.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>Set Role Name and Description</h4>
+                <p>Enter a descriptive role name (e.g., "Kitchen Staff", "Cashier", "Manager") and an optional description.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-content">
+                <h4>Configure Permissions</h4>
+                <p>Toggle on the specific permissions for this role — control access to Menu, Orders, Reports, Settings, and other modules.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-content">
+                <h4>Save the Role</h4>
+                <p>Click <strong>"Save"</strong> to create the role. You can now assign it to employees in the Employee Management section.</p>
+              </div>
+            </div>
+          `
+        },
+        {
+          id: "employee-pin-setup",
+          title: "Employee PIN Setup",
+          description: "Set up employee PINs for secure access to the POS system.",
+          tags: ["hrm", "employee", "pin", "security"],
+          scribeEmbed: "https://scribehow.com/embed/Employee_PIN_Setup__i64ZSSlYQ5CjbQmrbebdvg",
+          content: `
+            <h2>Overview</h2>
+            <p>This guide shows you how to set up and manage employee PINs for POS system access control.</p>
+            <h2>Steps</h2>
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Go to Employee Management</h4>
+                <p>Navigate to <strong>HRM → Employee</strong> in the FeedMe Portal.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Select Employee</h4>
+                <p>Click on the employee you want to set a PIN for.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Set PIN</h4>
+                <p>Enter a unique PIN code for the employee. This PIN will be used to log in to the POS system.</p>
+              </div>
+            </div>
+          `
+        }
+      ]
+    },
+    {
+      id: "troubleshooting",
+      name: "Troubleshooting",
+      icon: "🔧",
+      color: "#F59E0B",
+      bgColor: "#FFF6EB",
+      description: "Common issues, error solutions, and step-by-step fix guides.",
+      articles: [
+        {
+          id: "printer-troubleshooting",
+          title: "Printer Troubleshooting Guide",
+          description: "Printer not working? Use this guide to resolve common printer issues. Select the relevant error and follow the steps in order.",
+          tags: ["printer", "connection", "network", "LAN"],
+          articleIcon: "🖨️",
+          articleColor: "#EF4444",
+          scribeEmbed: "",
+          content: `
+            <div class="callout callout-warning">
+              <strong>🖨️ Printer not working?</strong> Select the error you're seeing below. Click to expand and follow the steps.
+            </div>
+
+            <!-- ========== ACCORDION: Connection Timed Out ========== -->
+            <details class="error-accordion" open>
+              <summary class="error-accordion-header">
+                <div class="error-accordion-icon" style="background: #FEE2E2; color: #DC2626;">⏱️</div>
+                <div class="error-accordion-info">
+                  <h2>Connection Timed Out / No Route to Host</h2>
+                  <p>Printer cannot reach the network — usually a cable or router issue</p>
+                </div>
+                <span class="error-accordion-chevron">▾</span>
+              </summary>
+              <div class="error-accordion-body">
+
+                <div class="error-detail-grid">
+                  <div class="error-detail-card">
+                    <h4>Error Messages</h4>
+                    <code>SocketException: Connection timed out, host: 192.168.0.212, port: 9100</code>
+                    <code>SocketException: No route to host, address = 192.168.0.212</code>
+                  </div>
+                  <div class="error-detail-card">
+                    <h4>Common Causes</h4>
+                    <ul>
+                      <li>Loose or faulty <strong>LAN cable</strong></li>
+                      <li>Router / switch is <strong>down or not responding</strong></li>
+                      <li>Printer <strong>LAN port</strong> is not active</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; margin: 0 0 28px; flex-wrap: wrap;">
+                  <img src="images/troubleshooting/error-timed-out.png" alt="Connection timed out error" style="max-width: 260px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+                  <img src="images/troubleshooting/error-no-route.png" alt="No route to host error" style="max-width: 300px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+                </div>
+
+                <div class="phase-header">
+                  <span class="phase-badge">Phase 1</span>
+                  <span>Hardware Check</span>
+                </div>
+
+                <div class="step">
+                  <div class="step-num">1</div>
+                  <div class="step-content">
+                    <h4>Restart the printer and the router / switch</h4>
+                    <p>Power off both devices, wait 10 seconds, then power them back on.</p>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">2</div>
+                  <div class="step-content">
+                    <h4>Unplug and replug the LAN cable</h4>
+                    <p>Disconnect the LAN cable on <strong>both ends</strong> (printer and router/switch), then reconnect firmly.</p>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">3</div>
+                  <div class="step-content">
+                    <h4>Check the LAN port lights on the printer</h4>
+                    <p>The light should be <strong>ON and blinking</strong>. If the light is off, try a different LAN cable or port on the switch.</p>
+                    <img src="images/troubleshooting/step-lan-port-lights.png" alt="LAN port lights on printer" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+
+                <div class="phase-header">
+                  <span class="phase-badge">Phase 2</span>
+                  <span>Reprint from POS</span>
+                </div>
+
+                <div class="step">
+                  <div class="step-num">4</div>
+                  <div class="step-content">
+                    <h4>On the POS, tap the FeedMe Robot icon</h4>
+                    <p>Open the FeedMe POS app and tap the <strong>FeedMe Robot</strong> icon (bottom-right corner of the screen).</p>
+                    <img src="images/troubleshooting/step-feedme-robot.png" alt="FeedMe Robot icon" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">5</div>
+                  <div class="step-content">
+                    <h4>Tap the error notification to reprint</h4>
+                    <p>If there is a printer failure notification, tap on it to reprint the failed job. If there is <strong>no error notification</strong>, use the manual reprint steps below.</p>
+                    <img src="images/troubleshooting/step-notification-panel.png" alt="Printer error notification" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+
+                <div class="phase-header">
+                  <span class="phase-badge">Alt</span>
+                  <span>Manual Reprint (if Robot has no error)</span>
+                </div>
+
+                <div class="step">
+                  <div class="step-num">1</div>
+                  <div class="step-content">
+                    <h4>Go to Order Table</h4>
+                    <p>Navigate to the <strong>Order Table</strong> view. Then tap the <strong>product quantity</strong> of the item you need to reprint.</p>
+                    <img src="images/troubleshooting/step-order-table.png" alt="Order Table view" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">2</div>
+                  <div class="step-content">
+                    <h4>Tap Send to reprint</h4>
+                    <p>Select the item and tap <strong>"Send"</strong> to resend the print job to the printer.</p>
+                    <img src="images/troubleshooting/step-send-button.png" alt="Send button" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+
+              </div>
+            </details>
+
+            <!-- ========== ACCORDION: Connection Refused ========== -->
+            <details class="error-accordion">
+              <summary class="error-accordion-header">
+                <div class="error-accordion-icon" style="background: #FEF3C7; color: #D97706;">🚫</div>
+                <div class="error-accordion-info">
+                  <h2>Connection Refused (IP Conflict)</h2>
+                  <p>Printer IP conflicts with another device — requires IP change</p>
+                </div>
+                <span class="error-accordion-chevron">▾</span>
+              </summary>
+              <div class="error-accordion-body">
+
+                <div class="error-detail-grid">
+                  <div class="error-detail-card">
+                    <h4>Error Message</h4>
+                    <code>SocketException: Connection refused, address = 192.168.0.220, port = 63521</code>
+                  </div>
+                  <div class="error-detail-card">
+                    <h4>Why This Happens</h4>
+                    <p>The printer IP address is <strong>conflicting</strong> with another device. This usually occurs when the printer was turned off and the router assigned its IP to another device.</p>
+                  </div>
+                </div>
+
+                <div style="margin: 0 0 28px;">
+                  <img src="images/troubleshooting/connection-refused-error.png" alt="Connection refused error" style="max-width: 380px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+                </div>
+
+                <div class="phase-header">
+                  <span class="phase-badge">Phase 1</span>
+                  <span>Connect Printer via USB</span>
+                </div>
+
+                <div class="step">
+                  <div class="step-num">1</div>
+                  <div class="step-content">
+                    <h4>Bring the problematic printer to the POS device</h4>
+                    <p>Then connect it using <strong>USB</strong>.</p>
+                    <ul><li>You may temporarily unplug the cashier printer USB cable and use it.</li></ul>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">2</div>
+                  <div class="step-content">
+                    <h4>Tap the navigation button (bottom-left)</h4>
+                    <p>On the POS screen, tap the <strong>grid/navigation icon</strong> at the bottom-left corner to open the navigation menu.</p>
+                    <img src="images/troubleshooting/step-tap-navigation.png" alt="POS navigation button" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">3</div>
+                  <div class="step-content">
+                    <h4>Tap Settings → Operation → Printer</h4>
+                    <p>Navigate through: <strong>Settings</strong> → <strong>Operation</strong> → <strong>Printer</strong>.</p>
+                    <div style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
+                      <img src="images/troubleshooting/step-tap-settings.png" alt="Settings" style="max-width: 32%; border-radius: 8px; border: 1px solid var(--border);">
+                      <img src="images/troubleshooting/step-tap-operation.png" alt="Operation" style="max-width: 32%; border-radius: 8px; border: 1px solid var(--border);">
+                      <img src="images/troubleshooting/step-tap-printer.png" alt="Printer" style="max-width: 32%; border-radius: 8px; border: 1px solid var(--border);">
+                    </div>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">4</div>
+                  <div class="step-content">
+                    <h4>Select the problematic printer</h4>
+                    <p>Tap on the printer that is having the connection issue (e.g., <strong>Kitchen</strong>).</p>
+                    <img src="images/troubleshooting/step-select-printer.png" alt="Select problematic printer" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">5</div>
+                  <div class="step-content">
+                    <h4>Tap Search Connection</h4>
+                    <p>In the printer details page, scroll to the <strong>Connection</strong> section and tap <strong>"Search Connection"</strong>.</p>
+                    <img src="images/troubleshooting/step-search-connection.png" alt="Search Connection button" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">6</div>
+                  <div class="step-content">
+                    <h4>Select POS-80C or POS80, then tap Connect</h4>
+                    <p>In the Printer Connection dialog, select the <strong>Driver</strong> tab. Choose <strong>POS-80C</strong> or <strong>POS80</strong> from the list, then tap <strong>"Connect"</strong>.</p>
+                    <img src="images/troubleshooting/step-printer-connection-dialog.png" alt="Printer Connection dialog" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">7</div>
+                  <div class="step-content">
+                    <h4>Tap Test Print to confirm it is connected</h4>
+                    <p>Tap the <strong>"Test Print"</strong> button (top-right corner) to verify the USB connection is working.</p>
+                    <img src="images/troubleshooting/step-test-print.png" alt="Test Print button" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+
+                <div class="phase-header">
+                  <span class="phase-badge">Phase 2</span>
+                  <span>Set a New Printer IP Address</span>
+                </div>
+
+                <div class="step">
+                  <div class="step-num">8</div>
+                  <div class="step-content">
+                    <h4>Scroll down and tap Set</h4>
+                    <p>Scroll down to the <strong>Advance</strong> section. Find <strong>"Custom IP address"</strong> and tap <strong>"Set"</strong>.</p>
+                    <img src="images/troubleshooting/step-custom-ip-set.png" alt="Custom IP address Set button" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">9</div>
+                  <div class="step-content">
+                    <h4>Set a new IP address</h4>
+                    <p>We recommend: <strong>previous printer IP + 10</strong>.</p>
+                    <ul>
+                      <li><code>192.168.1.150</code> → <code>192.168.1.160</code></li>
+                      <li><code>192.168.0.200</code> → <code>192.168.0.210</code></li>
+                    </ul>
+                    <div class="callout callout-info" style="margin-top: 12px;">
+                      <strong>IP Rules:</strong> Keep the first three sections the same. Change <strong>only the last number</strong>. Do not exceed <code>.225</code>. Make sure the new IP is not used by another device.
+                    </div>
+                    <p>Then tap <strong>Save</strong>.</p>
+                    <img src="images/troubleshooting/step-custom-ip-dialog.png" alt="Custom IP address dialog" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+
+                <div class="phase-header">
+                  <span class="phase-badge">Phase 3</span>
+                  <span>Reconnect the Printer to the Network</span>
+                </div>
+
+                <div class="step">
+                  <div class="step-num">10</div>
+                  <div class="step-content">
+                    <h4>Bring the printer back to its original location</h4>
+                    <p>Then:</p>
+                    <ol type="a">
+                      <li>Power on the printer.</li>
+                      <li>Plug in the LAN cable securely.</li>
+                      <li>Confirm the LAN port lights are <strong>ON and blinking</strong>.</li>
+                    </ol>
+                    <img src="images/troubleshooting/step-reconnect-lan.png" alt="Reconnect LAN cable" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">11</div>
+                  <div class="step-content">
+                    <h4>Connect using the new IP</h4>
+                    <p>Go back to the printer settings:</p>
+                    <ol type="a">
+                      <li>Select <strong>IP</strong>.</li>
+                      <li>Choose <strong>Custom</strong>.</li>
+                      <li>Enter the <strong>new IP</strong> (from the previous step).</li>
+                      <li>Tap <strong>Save</strong>, then <strong>Connect</strong>.</li>
+                    </ol>
+                    <img src="images/troubleshooting/step-ip-tab-connect.png" alt="IP tab connection" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">12</div>
+                  <div class="step-content">
+                    <h4>Run Test Print</h4>
+                    <p>Tap <strong>"Test Print"</strong> to confirm the connection is working.</p>
+                    <img src="images/troubleshooting/step-test-print-final.png" alt="Final Test Print" style="max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--border);">
+                    <p><em>If the same error still occurs, repeat the steps and try a different new IP.</em></p>
+                  </div>
+                </div>
+
+              </div>
+            </details>
+          `
+        },
+        {
+          id: "login-issues",
+          title: "Login Issues",
+          description: "Troubleshoot common login problems including forgotten passwords and account lockouts.",
+          tags: ["login", "password", "access"],
+          articleIcon: "🔑",
+          articleColor: "#3B82F6",
+          scribeEmbed: "",
+          content: `<h2>Common Login Issues</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Forgot Password</h4><p>Click <strong>"Forgot Password"</strong> on the login page. Enter your registered email to receive a password reset link.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Account Locked</h4><p>After 5 failed login attempts, your account is temporarily locked. Wait 15 minutes or contact your administrator to unlock.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Browser Cache Issues</h4><p>Clear your browser cache and cookies, then try logging in again. Use <strong>Ctrl+Shift+Delete</strong> to access cache clearing settings.</p></div></div>`
+        },
+        {
+          id: "menu-not-showing",
+          title: "Menu Not Showing",
+          description: "Fix issues where menu items are not appearing on the customer-facing app.",
+          tags: ["menu", "display", "visibility"],
+          articleIcon: "📋",
+          articleColor: "#10B981",
+          scribeEmbed: "",
+          content: `<h2>Possible Causes & Solutions</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Check Product Status</h4><p>Go to <strong>Menu → Products</strong> and ensure the product's publish toggle is <strong>ON</strong>.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Check Menu Scheduler</h4><p>Verify that the item isn't under a scheduler that has expired or hasn't started yet.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Check Catalog Assignment</h4><p>Ensure the product is assigned to an active catalog that is published.</p></div></div>`
+        },
+        {
+          id: "payment-errors",
+          title: "Payment Errors",
+          description: "Resolve common payment processing errors and transaction failures.",
+          tags: ["payment", "transaction", "billing"],
+          articleIcon: "💳",
+          articleColor: "#8B5CF6",
+          scribeEmbed: "",
+          content: `<h2>Common Payment Errors</h2>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Payment Gateway Timeout</h4><p>Check your internet connection. If stable, the payment gateway may be experiencing downtime. Try again in a few minutes.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Transaction Declined</h4><p>Ask the customer to verify their card details or try a different payment method.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Double Charge</h4><p>Check the transaction log in <strong>Reports → Transactions</strong>. If a double charge occurred, process a refund from the transaction details page.</p></div></div>`
+        }
+      ]
+    }
+  ]
+};

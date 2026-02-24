@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Option B — Sidebar Docs Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            background: #fff;
+        }
+
+        /* ===== TOP BAR ===== */
+        .topbar {
+            height: 56px;
+            background: #fff;
+            border-bottom: 1px solid #e8e8ed;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .topbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            color: #1a1a2e;
+            text-decoration: none;
+            width: 260px;
+            flex-shrink: 0;
+        }
+
+        .topbar-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #FF6B35, #FF8F5E);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .topbar-search {
+            flex: 1;
+            max-width: 480px;
+            position: relative;
+        }
+
+        .topbar-search input {
+            width: 100%;
+            padding: 8px 12px 8px 36px;
+            border: 1px solid #e0e0e5;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            background: #f8f9fa;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .topbar-search input:focus {
+            border-color: #FF6B35;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .topbar-search svg {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .topbar-right {
+            margin-left: auto;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .topbar-link {
+            font-size: 13px;
+            color: #64647a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .topbar-link:hover {
+            color: #FF6B35;
+        }
+
+        /* ===== LAYOUT ===== */
+        .layout {
+            display: flex;
+            margin-top: 56px;
+            min-height: calc(100vh - 56px);
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: 280px;
+            background: #FAFAFA;
+            border-right: 1px solid #e8e8ed;
+            padding: 24px 16px;
+            position: fixed;
+            top: 56px;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .sidebar-section {
+            margin-bottom: 8px;
+        }
+
+        .sidebar-heading {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a2e;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .sidebar-heading:hover {
+            background: #f0f0f5;
+        }
+
+        .sidebar-heading .arrow {
+            font-size: 10px;
+            color: #999;
+            transition: transform 0.2s;
+            margin-right: 4px;
+        }
+
+        .sidebar-heading .arrow.open {
+            transform: rotate(90deg);
+        }
+
+        .sidebar-heading .cat-icon {
+            font-size: 16px;
+        }
+
+        .sidebar-items {
+            padding-left: 20px;
+            overflow: hidden;
+        }
+
+        .sidebar-items.collapsed {
+            display: none;
+        }
+
+        .sidebar-item {
+            display: block;
+            padding: 8px 12px 8px 24px;
+            font-size: 13px;
+            color: #64647a;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.15s;
+            border-left: 2px solid transparent;
+            margin-bottom: 2px;
+        }
+
+        .sidebar-item:hover {
+            color: #1a1a2e;
+            background: #f0f0f5;
+        }
+
+        .sidebar-item.active {
+            color: #FF6B35;
+            background: #FFF5F0;
+            border-left-color: #FF6B35;
+            font-weight: 600;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main {
+            margin-left: 280px;
+            flex: 1;
+            padding: 40px 60px;
+            max-width: 900px;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .breadcrumb a {
+            color: #FF6B35;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 6px;
+        }
+
+        .main h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .main .subtitle {
+            font-size: 16px;
+            color: #64647a;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .meta-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .meta-tag {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #FFF0EB;
+            color: #FF6B35;
+        }
+
+        .meta-tag.steps {
+            background: #EBF0FF;
+            color: #4A6CF7;
+        }
+
+        .meta-tag.time {
+            background: #EBFFF4;
+            color: #22C55E;
+        }
+
+        /* ===== SCRIBE EMBED PREVIEW ===== */
+        .scribe-embed {
+            border: 1px solid #e8e8ed;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .scribe-header {
+            background: linear-gradient(135deg, #FFF5F0, #FFF0EB);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .scribe-logo {
+            width: 56px;
+            height: 56px;
+            background: #fff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            font-size: 24px;
+        }
+
+        .scribe-header h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .scribe-meta {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .scribe-meta span {
+            margin: 0 8px;
+            color: #ccc;
+        }
+
+        .scribe-footer {
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #e8e8ed;
+            background: #fff;
+        }
+
+        .scribe-progress {
+            display: flex;
+            gap: 6px;
+        }
+
+        .scribe-progress div {
+            width: 32px;
+            height: 4px;
+            border-radius: 2px;
+            background: #e0e0e5;
+        }
+
+        .scribe-progress div.done {
+            background: #FF6B35;
+        }
+
+        .scribe-step-count {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .scribe-btn {
+            background: #FF6B35;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .scribe-btn:hover {
+            background: #e55a28;
+        }
+
+        /* ===== STEPS ===== */
+        .guide-steps h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f5;
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #f0f0f5;
+            transition: border-color 0.2s;
+        }
+
+        .step:hover {
+            border-color: #FF6B35;
+        }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #FF6B35, #FF8F5E);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: #64647a;
+            line-height: 1.6;
+        }
+
+        .step-img {
+            width: 100%;
+            height: 160px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 13px;
+            border: 1px dashed #ddd;
+        }
+
+        /* ===== DEMO LABEL ===== */
+        .demo-label {
+            position: fixed;
+            top: 72px;
+            right: 20px;
+            background: #4A6CF7;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            z-index: 200;
+            box-shadow: 0 4px 16px rgba(74, 108, 247, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="demo-label">📐 DESIGN OPTION B — Sidebar Docs Style</div>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <a href="#" class="topbar-logo">
+            <div class="topbar-logo-icon">🍴</div>
+            FeedMe Docs
+        </a>
+        <div class="topbar-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" placeholder="Search guides... (Ctrl+K)">
+        </div>
+        <div class="topbar-right">
+            <a href="#" class="topbar-link">FeedMe Portal</a>
+            <a href="#" class="topbar-link">Support</a>
+        </div>
+    </div>
+
+    <!-- LAYOUT -->
+    <div class="layout">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <!-- Menu Setup -->
+            <div class="sidebar-section">
+                <div class="sidebar-heading" onclick="toggleSection(this)">
+                    <span class="arrow">▶</span>
+                    <span class="cat-icon">🍽️</span>
+                    Menu Setup
+                </div>
+                <div class="sidebar-items collapsed">
+                    <a href="#" class="sidebar-item">Create New Product</a>
+                    <a href="#" class="sidebar-item">Create Variant</a>
+                    <a href="#" class="sidebar-item">Edit Product</a>
+                    <a href="#" class="sidebar-item">Create Add-on Options</a>
+                    <a href="#" class="sidebar-item">Create Menu Scheduler</a>
+                    <a href="#" class="sidebar-item">Create Catalog</a>
+                </div>
+            </div>
+
+            <!-- Connect Setup -->
+            <div class="sidebar-section">
+                <div class="sidebar-heading" onclick="toggleSection(this)">
+                    <span class="arrow">▶</span>
+                    <span class="cat-icon">🔗</span>
+                    Connect Setup
+                </div>
+                <div class="sidebar-items collapsed">
+                    <a href="#" class="sidebar-item">Promotion Campaign (Item Discount)</a>
+                    <a href="#" class="sidebar-item">Promotion Campaign (Bill Discount)</a>
+                    <a href="#" class="sidebar-item">Voucher Campaign (Bill Discount)</a>
+                    <a href="#" class="sidebar-item">Voucher Code Campaign</a>
+                    <a href="#" class="sidebar-item">Broadcast Campaign</a>
+                    <a href="#" class="sidebar-item">Membership Tiers & Experience</a>
+                    <a href="#" class="sidebar-item">Create Title</a>
+                    <a href="#" class="sidebar-item">Point Program</a>
+                    <a href="#" class="sidebar-item">Cashback Program</a>
+                    <a href="#" class="sidebar-item">Spin & Win Game</a>
+                    <a href="#" class="sidebar-item">Mission Program</a>
+                    <a href="#" class="sidebar-item">Points Redeem Reward</a>
+                </div>
+            </div>
+
+            <!-- Restaurant Operation -->
+            <div class="sidebar-section">
+                <div class="sidebar-heading" onclick="toggleSection(this)">
+                    <span class="arrow">▶</span>
+                    <span class="cat-icon">🏪</span>
+                    Restaurant Operation
+                </div>
+                <div class="sidebar-items collapsed">
+                    <a href="#" class="sidebar-item">Order Management</a>
+                    <a href="#" class="sidebar-item">Table Setup</a>
+                    <a href="#" class="sidebar-item">Payment Configuration</a>
+                </div>
+            </div>
+
+            <!-- HRM -->
+            <div class="sidebar-section">
+                <div class="sidebar-heading" onclick="toggleSection(this)">
+                    <span class="arrow open">▶</span>
+                    <span class="cat-icon">👥</span>
+                    HRM
+                </div>
+                <div class="sidebar-items">
+                    <a href="#" class="sidebar-item active">Employee Role Setup</a>
+                </div>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="sidebar-section">
+                <div class="sidebar-heading" onclick="toggleSection(this)">
+                    <span class="arrow">▶</span>
+                    <span class="cat-icon">🔧</span>
+                    Troubleshooting
+                </div>
+                <div class="sidebar-items collapsed">
+                    <a href="#" class="sidebar-item">Login Issues</a>
+                    <a href="#" class="sidebar-item">Menu Not Showing</a>
+                    <a href="#" class="sidebar-item">Payment Errors</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main">
+            <div class="breadcrumb">
+                <a href="#">Home</a><span>›</span>
+                <a href="#">HRM</a><span>›</span>
+                Employee Role Setup
+            </div>
+
+            <h1>Employee Role Setup</h1>
+            <p class="subtitle">
+                Learn how to create and configure employee roles with the right permissions for your restaurant team.
+                This guide walks you through the step-by-step process using the FeedMe Portal.
+            </p>
+
+            <div class="meta-tags">
+                <span class="meta-tag">HRM</span>
+                <span class="meta-tag steps">9 Steps</span>
+                <span class="meta-tag time">~19 seconds</span>
+            </div>
+
+            <!-- Scribe Embed -->
+            <div class="scribe-embed">
+                <div class="scribe-header">
+                    <div class="scribe-logo">🍴</div>
+                    <h3>Employee Role Setup</h3>
+                    <div class="scribe-meta">
+                        9 Steps <span>|</span> 19 seconds
+                    </div>
+                </div>
+                <div class="scribe-footer">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <span class="scribe-step-count">Step 0 of 9</span>
+                        <div class="scribe-progress">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <button class="scribe-btn">Get Started →</button>
+                </div>
+            </div>
+
+            <!-- Steps -->
+            <div class="guide-steps">
+                <h2>Step-by-Step Guide</h2>
+
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Navigate to HRM Settings</h4>
+                        <p>In the FeedMe Portal, go to the left sidebar and click on <strong>"HRM"</strong> to expand
+                            the HRM menu options.</p>
+                        <div class="step-img">📸 Screenshot placeholder</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Click on "Role Management"</h4>
+                        <p>Select <strong>"Role Management"</strong> from the HRM submenu to access the role
+                            configuration page.</p>
+                        <div class="step-img">📸 Screenshot placeholder</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Create New Role</h4>
+                        <p>Click the <strong>"+ New Role"</strong> button in the top-right corner to start creating a
+                            new employee role.</p>
+                        <div class="step-img">📸 Screenshot placeholder</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(heading) {
+            const items = heading.nextElementSibling;
+            const arrow = heading.querySelector('.arrow');
+            items.classList.toggle('collapsed');
+            arrow.classList.toggle('open');
+        }
+    </script>
+
+</body>
+
+</html>
