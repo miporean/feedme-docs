@@ -139,7 +139,6 @@ img {
   text-align: center;
   position: relative;
   overflow: visible;
-  z-index: 10;
 }
 
 .hero::before {
