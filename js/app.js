@@ -542,7 +542,7 @@
             navigate({ article: articleId });
           });
         });
-      }, 200);
+      }, 50);
     });
 
     // Close results on click outside
